@@ -1,0 +1,154 @@
+:root{
+    --background-1: #F6EDFF;
+    --button-1: #E0B6FF;
+    --button-2: #FFFFFF;
+    --card-1: #D0BCFF;
+    --color-1: #FFFFFF;
+    --color-2: #1E1B1B;
+    --color-3: #494649;
+    --progress-bar-1: #8A20D5;
+}
+@font-face {
+    font-family: "OpenSans_Condensed-Bold";
+    src: url(../storage/font/ProductSans/OpenSans_Condensed-Bold.ttf);
+}
+@font-face {
+    font-family: "OpenSans_Condensed-BoldItalic";
+    src: url(../storage/font/ProductSans/OpenSans_Condensed-BoldItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans_Condensed-ExtraBold";
+    src: url(../storage/font/ProductSans/OpenSans_Condensed-ExtraBold.ttf);
+}
+@font-face {
+    font-family: "OpenSans_Condensed-ExtraBoldItalic";
+    src: url(../storage/font/ProductSans/OpenSans_Condensed-ExtraBoldItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans_Condensed-Italic";
+    src: url(../storage/font/ProductSans/OpenSans_Condensed-Italic.ttf);
+}
+@font-face {
+    font-family: "OpenSans_Condensed-Light";
+    src: url(../storage/font/ProductSans/OpenSans_Condensed-Light.ttf);
+}
+@font-face {
+    font-family: "OpenSans_Condensed-LightItalic";
+    src: url(../storage/font/ProductSans/OpenSans_Condensed-LightItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans_Condensed-Medium";
+    src: url(../storage/font/ProductSans/OpenSans_Condensed-Medium.ttf);
+}
+@font-face {
+    font-family: "OpenSans_Condensed-MediumItalic";
+    src: url(../storage/font/ProductSans/OpenSans_Condensed-MediumItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans_Condensed-Regular";
+    src: url(../storage/font/ProductSans/OpenSans_Condensed-Regular.ttf);
+}
+@font-face {
+    font-family: "OpenSans_Condensed-SemiBold";
+    src: url(../storage/font/ProductSans/OpenSans_Condensed-SemiBold.ttf);
+}
+@font-face {
+    font-family: "OpenSans_Condensed-SemiBoldItalic";
+    src: url(../storage/font/ProductSans/OpenSans_Condensed-SemiBoldItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-Bold";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-Bold.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-BoldItalic";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-BoldItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-ExtraBold";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-ExtraBold.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-ExtraBoldItalic";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-ExtraBoldItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-Italic";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-Italic.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-Italic";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-Light.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-Light";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-Light.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-LightItalic";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-LightItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-Medium";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-Medium.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-MediumItalic";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-MediumItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-Regular";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-Regular.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-SemiBold";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-SemiBold.ttf);
+}
+@font-face {
+    font-family: "OpenSans_SemiCondensed-SemiBoldItalic";
+    src: url(../storage/font/ProductSans/OpenSans_SemiCondensed-SemiBoldItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans-Bold";
+    src: url(../storage/font/ProductSans/OpenSans-Bold.ttf);
+}
+@font-face {
+    font-family: "OpenSans-BoldItalic";
+    src: url(../storage/font/ProductSans/OpenSans-BoldItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans-ExtraBold";
+    src: url(../storage/font/ProductSans/OpenSans-ExtraBold.ttf);
+}
+@font-face {
+    font-family: "OpenSans-Italic";
+    src: url(../storage/font/ProductSans/OpenSans-Italic.ttf);
+}
+@font-face {
+    font-family: "OpenSans-Light";
+    src: url(../storage/font/ProductSans/OpenSans-Light.ttf);
+}
+@font-face {
+    font-family: "OpenSans-LightItalic";
+    src: url(../storage/font/ProductSans/OpenSans-LightItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans-Medium";
+    src: url(../storage/font/ProductSans/OpenSans-Medium.ttf);
+}
+@font-face {
+    font-family: "OpenSans-MediumItalic";
+    src: url(../storage/font/ProductSans/OpenSans-MediumItalic.ttf);
+}
+@font-face {
+    font-family: "OpenSans-Regular";
+    src: url(../storage/font/ProductSans/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: "OpenSans-SemiBold";
+    src: url(../storage/font/ProductSans/OpenSans-SemiBold.ttf);
+}
+@font-face {
+    font-family: "OpenSans-SemiBoldItalic";
+    src: url(../storage/font/ProductSans/OpenSans-SemiBoldItalic.ttf);
+}
