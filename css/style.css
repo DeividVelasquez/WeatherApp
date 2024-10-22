@@ -204,4 +204,49 @@ input:focus {
     align-items: center;
 }
 
+.parent2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+    width: fit-content;
+    margin: auto; 
+    padding: 0px;
+    border-radius: 16px;
+}
+
+.card {
+    background-color: #f1e4ff;
+    border-radius: 16px; 
+    padding: 13px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(2, auto);
+    gap: 5px;
+    align-items: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title2 {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.main-value {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.extra-value {
+    font-size: 9px;
+    color: #888;
+    justify-self: end;
+}
+
+.extra-value:before {
+    content: '▲ '; 
+    color: red; /* Cambia el color según corresponda */
+}
+
 

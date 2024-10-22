@@ -29,7 +29,6 @@
     <p id="maxTempDay" class="Day"></p>
     <p id="minTempNight" class="Night"></p>
 
-    <p id="wind" class="wind" style="display: none;"></p>
     <p id="humidity" class="humidity" style="display: none;"></p>
 
     <img src="./storage/img/background2.png" alt="" class="background">
@@ -39,6 +38,33 @@
         <div class="div2"><a href="#" class="a2">Tomorrow</a></div>
         <div class="div3"><a href="#" class="a3">10 days</a></div>
     </div>
+
+    <div class="parent2">
+        <div class="card">
+            <div class="icon"><img src="./storage/img/air.png" alt=""></div>
+            <div class="title2">Wind speed</div>
+            <div class="main-value"><p id="wind"></p></div>
+            <div class="extra-value"><span id="wind-change"></span></div>
+        </div>
+        <div class="card">
+            <div class="icon"><img src="./storage/img/rainy.png" alt=""></div>
+            <div class="title2">Rain chance</div>
+            <div class="main-value"><p id="rain-chance"></p></div>
+            <div class="extra-value"><span id="rain-change"></span></div>
+        </div>
+        <div class="card">
+            <div class="icon"><img src="./storage/img/waves.png" alt=""></div>
+            <div class="title2">Pressure</div>
+            <div class="main-value"><p id="pressure"></p></div>
+            <div class="extra-value"><span id="pressure-change"></span></div>
+        </div>
+        <div class="card">
+            <div class="icon"><img src="./storage/img/light_mode.png" alt=""></div>
+            <div class="title2">UV Index</div>
+            <div class="main-value"><p id="uv-index"></p></div>
+            <div class="extra-value"><span id="uv-change"></span></div>
+        </div>
+    </div>       
 
 </body>
 </html>

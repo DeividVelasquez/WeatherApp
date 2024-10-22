@@ -5,6 +5,12 @@ const searchIcon = document.getElementById('search-icon');
 let currentIndex = -1;
 let places = [];
 
+// Variables para almacenar valores anteriores (inicializados en 0)
+let previousWind = 0; 
+let previousRainChance = 0; 
+let previousPressure = 0; 
+let previousUV = 0; 
+
 // Debounce function
 function debounce(func, delay) {
     let timeout;
@@ -172,7 +178,30 @@ function displayWeatherData(data) {
         
         document.getElementById('condition').textContent = `${data.current.condition.text}`;
         document.getElementById('humidity').textContent = `Humedad: ${data.current.humidity}%`;
-        document.getElementById('wind').textContent = `Viento: ${data.current.wind_kph} km/h`;
+
+        // Mostrar datos de viento, lluvia, presión e índice UV
+        const currentWind = data.current.wind_kph;
+        const currentRainChance = data.forecast.forecastday[0].day.daily_chance_of_rain;
+        const currentPressure = data.current.pressure_mb;
+        const currentUV = data.current.uv;
+
+        document.getElementById('wind').textContent = `${currentWind} km/h`;
+        document.getElementById('rain-chance').textContent = `${currentRainChance}%`;
+        document.getElementById('pressure').textContent = `${currentPressure} hPa`;
+        document.getElementById('uv-index').textContent = `${currentUV}`;
+
+        // Calcular y mostrar los valores de extra-value
+        document.getElementById('wind-change').textContent = `${(currentWind - previousWind).toFixed(1)} km/h`;
+        document.getElementById('rain-change').textContent = `${(currentRainChance - previousRainChance).toFixed(1)}%`;
+        document.getElementById('pressure-change').textContent = `${(currentPressure - previousPressure).toFixed(1)} hPa`;
+        document.getElementById('uv-change').textContent = `${(currentUV - previousUV).toFixed(1)}`;
+
+        // Actualizar los valores anteriores
+        previousWind = currentWind;
+        previousRainChance = currentRainChance;
+        previousPressure = currentPressure;
+        previousUV = currentUV;
+
         document.getElementById('weather-icon').src = data.current.condition.icon;
         document.getElementById('weather-icon').alt = data.current.condition.text;
 
