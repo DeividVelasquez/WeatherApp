@@ -1,18 +1,155 @@
 @import url(variables.css);
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: var(--color-2);
     font-family: "OpenSans-Regular";
 }
-body{
+
+body {
     background: var(--background-1);
 }
 
-.background{
+.search-icon {
+    position: absolute;
+    cursor: pointer;
+    z-index: 999;
+    top: 27px;
+    right: 20px;
+}
+
+input {
+    position: absolute;
+    top: 40px;
+    display: none;
+    transition: all 0.3s ease;
+    padding: 10px;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    width: 100%; 
+    border-radius: 4px;
+    outline: none; 
+    z-index: 999;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+}
+
+.suggestions {
+    display: none;
+    position: absolute;
+    top: 75px;
+    width: 100%;
+    background-color: #fff;
+    z-index: 999;
+    border: none;
+    border-radius: 4px;
+}
+
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    border: none; 
+}
+
+.suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
+.background {
     width: 100%;
     border-radius: 0vi 0vi 10vi 10vi;
+    position: relative;
+}
+
+.title{
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    font-size: 20px;
+    color: white;
+    z-index: 999;
+}
+
+.temperaturediv{
+    position: absolute;
+    display: flex;
+    align-items: baseline;
+    top: 144px;
+    left: 10px;
+    width: 209px;
+    z-index: 999;
+}
+
+.temperature{
+    font-size: 60px;
+    color: white;
+}
+
+.feels-like{
+    position: absolute;
+    font-size: 12px;
+    right: 0px;
+    bottom: 15px;
+    color: white;
+}
+
+.localTime{
+    position: absolute;
+    top: 272px;
+    left: 25px;
+    color: white;
+    z-index: 999;
+}
+
+.condition{
+    position: absolute;
+    top: 150px;
+    right: 15px;
+    width: 80px;
+    text-align: center;
+    color: white;
+    z-index: 999;
+}
+
+.Day{
+    position: absolute;
+    color: white;
+    right: 10px;
+    top: 245px;
+    z-index: 999;
+}
+
+.Night{
+    position: absolute;
+    right: 10px;
+    top: 272px;
+    color: white;
+    z-index: 999;
+}
+
+.humidity{
+    position: absolute;
+    z-index: 999;
+}
+
+.wind{
+    position: absolute;
+    z-index: 999;
+}
+
+.weather-icon{
+    position: absolute;
+    width: 120px;
+    top: 5%;
+    right: 5px;
+    z-index: 999;
 }
 
 .parent {
@@ -68,5 +205,3 @@ body{
 }
 
 
-
-  

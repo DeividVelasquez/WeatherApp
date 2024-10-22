@@ -9,11 +9,36 @@
     <script type="module" defer src="js/main.js"></script>
 </head>
 <body>
+    
+    <input type="text" id="location-input" placeholder="Buscar lugar..." autocomplete="off">
+    <img src="./storage/img/search_white.png" alt="Buscar" id="search-icon" class="search-icon" style="cursor: pointer;">
+    <div id="suggestions" class="suggestions"></div>
+
+    <h2 id="location-name" class="title"></h2>
+
+    <div class="temperaturediv">
+        <p id="temperature" class="temperature"></p>
+        <p id="feels-like" class="feels-like"></p>
+    </div>
+
+    <p id="localTime" class="localTime"></p>
+
+    <p id="condition" class="condition"></p>
+    <img id="weather-icon" src="" alt="" class="weather-icon">
+
+    <p id="maxTempDay" class="Day"></p>
+    <p id="minTempNight" class="Night"></p>
+
+    <p id="wind" class="wind" style="display: none;"></p>
+    <p id="humidity" class="humidity" style="display: none;"></p>
+
     <img src="./storage/img/background2.png" alt="" class="background">
+
     <div class="parent">
         <div class="div1"><a href="#" class="a1">Today</a></div>
         <div class="div2"><a href="#" class="a2">Tomorrow</a></div>
         <div class="div3"><a href="#" class="a3">10 days</a></div>
-    </div>    
+    </div>
+
 </body>
 </html>
