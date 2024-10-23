@@ -5,6 +5,7 @@ const searchIcon = document.getElementById('search-icon');
 let currentIndex = -1;
 let places = [];
 
+
 let previousWind = 0; 
 let previousRainChance = 0; 
 let previousPressure = 0; 
