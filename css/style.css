@@ -134,11 +134,6 @@ input:focus {
     z-index: 999;
 }
 
-.humidity{
-    position: absolute;
-    z-index: 999;
-}
-
 .wind{
     position: absolute;
     z-index: 999;
@@ -208,14 +203,14 @@ input:focus {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     gap: 15px; 
-    width: fit-content;
+    width: 89%;
     margin: auto; 
     padding: 0px;
     border-radius: 16px;
 }
 
 .card {
-    background-color: #f1e4ff;
+    background-color: var(--card-1);
     border-radius: 16px; 
     padding: 13px;
     display: grid;
@@ -249,4 +244,146 @@ input:focus {
     color: red; /* Cambia el color según corresponda */
 }
 
+.card2{
+    background-color: var(--card-1);
+    border-radius: 16px;
+    width: 89%;
+    height: 170px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto 20px auto;
+}
+
+.titulo{
+    height: 50px;
+    margin: 5px 12px;
+}
+
+.parent3 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    height: 100px;
+}
+
+.parent3 > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hour{
+    font-size: 12px;
+}
+
+.icon{
+    width: 40px;
+}
+
+.temp{
+    font-size: 12px;
+}
+
+
+.forecast-container {
+    background-color: var(--card-1);
+    border-radius: 16px;
+    width: 89%;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo2 {
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+}
+
+.forecast {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.forecast-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.hour2 {
+    font-size: 16px;
+    color: #555;
+    margin-right: 20px;
+    min-width: 50px;
+}
+
+.rain-bar-container {
+    background-color: #f0e4ff;
+    flex-grow: 1;
+    height: 8px;
+    border-radius: 4px;
+    position: relative;
+    margin-right: 20px;
+}
+
+.rain-bar {
+    height: 100%;
+    border-radius: 4px;
+    background-color: #6a0dad;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+.rain-prob {
+    font-size: 14px;
+    color: #555;
+    margin-left: 10px;
+    min-width: 40px;
+}
+
+/* Estilos para las cartas de sunrise y sunset */
+.sun-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 89%;
+    margin: 20px auto;
+}
+
+.sun-card {
+    background-color: var(--card-1);
+    border-radius: 16px;
+    padding: 20px;
+    width: 48%;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sun-card img {
+    width: 40px;
+    height: 40px;
+}
+
+.sun-card p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#sunrise-time, #sunset-time {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#time-since-sunrise, #time-until-sunset {
+    font-size: 12px;
+    color: gray;
+}
 

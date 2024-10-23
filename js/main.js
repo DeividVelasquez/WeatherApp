@@ -143,6 +143,8 @@ function fetchWeatherData(location) {
         })
         .then(data => {
             displayWeatherData(data);
+            displayHourlyForecast(data); // Mostrar el pronóstico por horas
+            displayHourlyForecast2(data);
             console.log(data);
         })
         .catch(error => {
@@ -196,6 +198,10 @@ function displayWeatherData(data) {
         document.getElementById('pressure-change').textContent = `${(currentPressure - previousPressure).toFixed(1)} hPa`;
         document.getElementById('uv-change').textContent = `${(currentUV - previousUV).toFixed(1)}`;
 
+        document.getElementById('temperature2').textContent = `${data.current.temp_c}°`;
+        document.getElementById('weather-icon2').src = data.current.condition.icon;
+        document.getElementById('weather-icon2').alt = data.current.condition.text;
+
         // Actualizar los valores anteriores
         previousWind = currentWind;
         previousRainChance = currentRainChance;
@@ -205,6 +211,33 @@ function displayWeatherData(data) {
         document.getElementById('weather-icon').src = data.current.condition.icon;
         document.getElementById('weather-icon').alt = data.current.condition.text;
 
+        // Mostrar salida y puesta del sol
+        const sunrise = data.forecast.forecastday[0].astro.sunrise;
+        const sunset = data.forecast.forecastday[0].astro.sunset;
+
+        // Extraer horas actuales
+        const currentTime = new Date(data.location.localtime);
+        const currentHour = currentTime.getHours();
+        const currentMinutes = currentTime.getMinutes();
+
+        // Calcular tiempo desde la salida del sol y hasta la puesta del sol
+        const [sunriseHour, sunriseMinute] = sunrise.split(' ')[0].split(':').map(Number);
+        const [sunsetHour, sunsetMinute] = sunset.split(' ')[0].split(':').map(Number);
+
+        const sunriseTime = new Date(currentTime);
+        const sunsetTime = new Date(currentTime);
+        sunriseTime.setHours(sunriseHour + (sunrise.includes('PM') ? 12 : 0), sunriseMinute);
+        sunsetTime.setHours(sunsetHour + (sunset.includes('PM') ? 12 : 0), sunsetMinute);
+
+        // Diferencias de tiempo
+        const timeSinceSunrise = Math.floor((currentTime - sunriseTime) / (1000 * 60 * 60)); // Horas desde salida
+        const timeUntilSunset = Math.ceil((sunsetTime - currentTime) / (1000 * 60 * 60)); // Horas hasta puesta
+
+        document.getElementById('sunrise-time').textContent = sunrise;
+        document.getElementById('sunset-time').textContent = sunset;
+        document.getElementById('time-since-sunrise').textContent = `${timeSinceSunrise}h ago`;
+        document.getElementById('time-until-sunset').textContent = `in ${timeUntilSunset}h`;
+
         input.value = '';
         suggestionsContainer.innerHTML = '';
     } else {
@@ -212,7 +245,55 @@ function displayWeatherData(data) {
     }
 }
 
+// Mostrar pronóstico por horas en los divs
+function displayHourlyForecast(data) {
+    const currentHour = new Date(data.location.localtime).getHours();
+    const forecastHours = data.forecast.forecastday[0].hour;
+
+    // Mostrar el pronóstico para las próximas 5 horas desde la hora actual
+    for (let i = 1; i <= 5; i++) {
+        const hourData = forecastHours[(currentHour + i) % 24]; // Obtener la hora, asegurarse de que no se salga de rango
+        const time = new Date(hourData.time).getHours().toString().padStart(2, '0') + ':00';
+        const temp = hourData.temp_c + '°C';
+        const condition = hourData.condition.text;
+        const icon = hourData.condition.icon;
+
+        // Actualizar los elementos del DOM para cada hora
+        document.getElementById(`hour-${i}`).textContent = time;
+        document.getElementById(`temp-${i}`).textContent = temp;
+        document.getElementById(`icon-${i}`).src = icon;
+        document.getElementById(`icon-${i}`).alt = condition;
+    }
+}
+
+function displayHourlyForecast2(data) {
+    const currentHour = new Date(data.location.localtime).getHours();
+    const forecastHours = data.forecast.forecastday[0].hour;
+
+    for (let i = 1; i <= 4; i++) {
+        const hourIndex = (currentHour + i) % 24;
+        const hourData = forecastHours[hourIndex];
+        const hourTime = new Date(hourData.time).getHours();
+
+        // Formatear la hora en formato 12 horas
+        const formattedHour = (hourTime % 12 || 12) + (hourTime >= 12 ? ' PM' : ' AM');
+        const rainChance = hourData.chance_of_rain; // Probabilidad de lluvia
+
+        // Actualizar el contenido de los elementos
+        document.getElementById(`hour-${i}2`).textContent = formattedHour;
+        document.getElementById(`rain-prob-${i}`).textContent = rainChance + '%';
+        
+        // Ajustar el ancho de la barra según la probabilidad de lluvia
+        const rainBar = document.getElementById(`rain-bar-${i}`);
+        rainBar.style.width = `${rainChance}%`;
+        rainBar.style.backgroundColor = '#6a0dad'; // Color de la barra
+    }
+}
+
+
 // Llamar a la función fetchWeatherData para Floridablanca al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     fetchWeatherData('Floridablanca, Santander, Colombia');
 });
+
+

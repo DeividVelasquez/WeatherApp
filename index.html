@@ -13,7 +13,6 @@
     <input type="text" id="location-input" placeholder="Buscar lugar..." autocomplete="off">
     <img src="./storage/img/search_white.png" alt="Buscar" id="search-icon" class="search-icon" style="cursor: pointer;">
     <div id="suggestions" class="suggestions"></div>
-
     <h2 id="location-name" class="title"></h2>
 
     <div class="temperaturediv">
@@ -64,7 +63,103 @@
             <div class="main-value"><p id="uv-index"></p></div>
             <div class="extra-value"><span id="uv-change"></span></div>
         </div>
-    </div>       
+    </div>
+    
+    <div class="card2">
+        <div class="titulo" style="display: flex; align-items: center;">
+            <img src="./storage/img/history_toggle_off.png" alt="" style="margin-right: 10px;">
+            <h2 style="font-size: 17px;">Hourly forecast</h2>
+        </div>
 
+        <div class="parent3">
+            <div class="div1">
+                <p class="hour">Now</p>
+                <img id="weather-icon2" src="" alt="" class="icon">
+                <p id="temperature2" class="temp"></p>
+            </div>
+            <div class="div2">
+                <p id="hour-1" class="hour"></p>
+                <img id="icon-1" src="" alt="" class="icon">
+                <p id="temp-1" class="temp"></p>
+            </div>
+            <div class="div3">
+                <p id="hour-2" class="hour"></p>
+                <img id="icon-2" src="" alt="" class="icon">
+                <p id="temp-2" class="temp"></p>
+            </div>
+            <div class="div4">
+                <p id="hour-3" class="hour"></p>
+                <img id="icon-3" src="" alt="" class="icon">
+                <p id="temp-3" class="temp"></p>
+            </div>
+            <div class="div5">
+                <p id="hour-4" class="hour"></p>
+                <img id="icon-4" src="" alt="" class="icon">
+                <p id="temp-4" class="temp"></p>
+            </div>
+            <div class="div6">
+                <p id="hour-5" class="hour"></p>
+                <img id="icon-5" src="" alt="" class="icon">
+                <p id="temp-5" class="temp"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="forecast-container">
+        <div class="titulo2" style="display: flex; align-items: center;">
+            <img src="./storage/img/rainy.png" alt="" style="margin-right: 10px;">
+            <h2 style="font-size: 17px;">Chance of rain</h2>
+        </div>
+        <div class="forecast">
+            <div class="forecast-row">
+                <div class="hour2" id="hour-12"></div>
+                <div class="rain-bar-container">
+                    <div class="rain-bar" id="rain-bar-1"></div>
+                </div>
+                <div class="rain-prob" id="rain-prob-1"></div>
+            </div>
+            <div class="forecast-row">
+                <div class="hour2" id="hour-22"></div>
+                <div class="rain-bar-container">
+                    <div class="rain-bar" id="rain-bar-2"></div>
+                </div>
+                <div class="rain-prob" id="rain-prob-2"></div>
+            </div>
+            <div class="forecast-row">
+                <div class="hour2" id="hour-32"></div>
+                <div class="rain-bar-container">
+                    <div class="rain-bar" id="rain-bar-3"></div>
+                </div>
+                <div class="rain-prob" id="rain-prob-3"></div>
+            </div>
+            <div class="forecast-row">
+                <div class="hour2" id="hour-42"></div>
+                <div class="rain-bar-container">
+                    <div class="rain-bar" id="rain-bar-4"></div>
+                </div>
+                <div class="rain-prob" id="rain-prob-4"></div>
+            </div>
+        </div>
+    </div>    
+
+    <div class="sun-container">
+        <div class="sun-card sunrise">
+            <img src="./storage/img/nights_stay.png" alt="Sunrise">
+            <div>
+                <p>Sunrise</p>
+                <p id="sunrise-time"></p>
+                <p id="time-since-sunrise"></p>
+            </div>
+        </div>
+        <div class="sun-card sunset">
+            <img src="./storage/img/bounding_box.png" alt="Sunset">
+            <div>
+                <p>Sunset</p>
+                <p id="sunset-time"></p>
+                <p id="time-until-sunset"></p>
+            </div>
+        </div>
+    </div>    
+    
 </body>
 </html>
